@@ -13,3 +13,4 @@ To run *frontend* part, run **_npm run dev_**
   * Next.js
   * Styled Components
   * NProgress
+* Prisma demo server
