@@ -1,3 +1,5 @@
 backend/node_modules
+backend/variables.env
 frontend/.next
 frontend/node_modules
+
