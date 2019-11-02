@@ -8,7 +8,11 @@ import formatMoney from '../lib/formatMoney';
 
 class Item extends Component {
   static propTypes = {
-    item: PropTypes.object.isRequired
+    item: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      description: PropTypes.string.isRequired
+    })
   }
 
   render () {
