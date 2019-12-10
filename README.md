@@ -3,7 +3,7 @@
 ## Frontend & Backend
 
 After git clone, run **_npm install_** in both folders
-On backend, add variable.env with prisma endpoint, then run npm run deploy
+On backend, add variable.env with prisma endpoint, then run **_npm run deploy_**
 
 To run *frontend* part, run **_npm run dev_**
 
