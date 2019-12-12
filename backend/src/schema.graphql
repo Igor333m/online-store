@@ -6,6 +6,7 @@
 type Mutation {
   createItem(title: String, description: String, price: Int, image: String, largeImage: String): Item!
   updateItem(id: ID!, title: String, description: String, price: Int): Item!
+  deleteItem(id: ID!): Item # Maybe create a new type Success message and return that with the string
 }
 
 type Query {
