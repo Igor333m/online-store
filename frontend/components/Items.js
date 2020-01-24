@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import styled from 'styled-components';
 import Item from './Item'
 
+// exported to search items to find deleted item
 const ALL_ITEMS_QUERY = gql`
   query ALL_ITEMS_QUERY {
     items {
