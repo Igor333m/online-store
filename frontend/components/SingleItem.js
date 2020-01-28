@@ -49,6 +49,10 @@ class SingleItem extends React.Component {
           if (!data.item) return <p>No Item Found for {this.props.id}</p>
           const item = data.item;
           return <SingleItemStyles>
+            {/* Set the new head title using Next/Head */}
+            <Head>
+              <title>Online Store | {item.title}</title>
+            </Head>
             <img src={item.largeImage} alt={item.title}/>
             <div className="details">
               <h2>Viewing {item.title}</h2>
