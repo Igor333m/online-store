@@ -65,7 +65,7 @@ class UpdateItem extends Component {
       }}>
         {({data, loading}) => {
           if (loading) return <p>Loading...</p>
-        if (!data.item) return <p>No Item Found for ID {this.props.id}</p>
+          if (!data.item) return <p>No Item Found for ID {this.props.id}</p>
           return (
             <Mutation mutation={UPDATE_ITEM_MUTATION} variables={this.state}>
               {(updateItem, { loading, error }) => (
@@ -107,7 +107,7 @@ class UpdateItem extends Component {
                         onChange={this.handleChange}
                       />
                     </label>
-              <button type="submit">Sav{loading ? 'ing' : 'e'} Changes</button>
+                    <button type="submit">Sav{loading ? 'ing' : 'e'} Changes</button>
                   </fieldset>
                 </Form>
               )}
