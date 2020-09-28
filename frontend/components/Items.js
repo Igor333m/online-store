@@ -4,11 +4,12 @@ import gql from 'graphql-tag';
 import styled from 'styled-components';
 import Item from './Item';
 import Paginaton from './Pagination';
+import { perPage } from '../config';
 
 // exported to search items to find deleted item
 const ALL_ITEMS_QUERY = gql`
-  query ALL_ITEMS_QUERY {
-    items {
+  query ALL_ITEMS_QUERY($skip: Int = 0, $first: Int = ${perPage}) {
+    items(first: $first, skip: $skip, orderBy: createAt_DESC) {
       id
       title
       price
@@ -25,7 +26,10 @@ class Items extends Component {
       <Center>
         <Paginaton page={this.props.page}/>
           {/* Only child of Query Component must be a function */}
-        <Query query={ALL_ITEMS_QUERY}>
+        <Query query={ALL_ITEMS_QUERY} variables={{
+          skip: this.props.page * perPage - perPage,
+          first: perPage
+        }}>
           { ({ data, error, loading }) => {
             if (loading) return <p>Loading...</p>
             if (error) return <p>Error: {error.message}</p>
